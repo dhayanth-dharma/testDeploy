@@ -4,7 +4,7 @@ cloud:
       static: ap-south-1
       auto: false
     credentials:
-      access-key: ASIA3OVW6CNIK7D46AB4
-      secret-key: i8RsbXMg4cquOJL45LA6kWkNSY6PwIq8sjza+91z
+      access-key: ASIA3OVW6CNILA4AJKHJ
+      secret-key: PLY87n8KkurwDVrKQ4K0b7DWVlsiFH5j6rJozMAl
     end-point:
       uri: https://sqs.us-east-1.amazonaws.com/787436409680/test
