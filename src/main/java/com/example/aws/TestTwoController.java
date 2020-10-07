@@ -20,7 +20,14 @@ public class TestTwoController {
 	    private String endpoint;
 
 	    @GetMapping("/send/{message}")
-	    public void sendMessageToQueue(@PathVariable String message) {
-	        queueMessagingTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
+	    public String sendMessageToQueue(@PathVariable String message) {
+	        try {
+	        	queueMessagingTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
+		        return "OK";	
+	        }catch(Exception ex)
+	        {
+	        	return ex.getMessage();
+	        }
+	    	
 	    }
 }
