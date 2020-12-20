@@ -30,4 +30,16 @@ public class TestTwoController {
 	        }
 	    	
 	    }
+
+		@GetMapping("/get/{message}")
+	    public String recieveMessage(@PathVariable String message) {
+	        try {
+	        	queueMessagingTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
+		        return "OK";	
+	        }catch(Exception ex)
+	        {
+	        	return ex.getMessage();
+	        }
+	    	
+	    }
 }
